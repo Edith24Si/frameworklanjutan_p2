@@ -1,8 +1,9 @@
 export default function HelloWorld() {
     const propsUserCard = {
-        nama: "Goku",
-        nim: "999999",
+        nama: "Nona",
+        nim: "2457301038",
         tanggal: "2025-01-01"
+        
     }
 
     return (
@@ -13,21 +14,23 @@ export default function HelloWorld() {
             <QuoteText />
 
             <UserCard
-                nama="Fikri"
-                nim="169412"
+                nama="Nona"
+                nim="2457301038"
                 tanggal={new Date().toLocaleDateString()}
+                usia={20}
             />
             <UserCard
             {...propsUserCard}
             />
             <img src="img/foto1.jpg" alt="logo"/>
+          
         </div>
     )
 }
 
 function GreetingBinjai() {
     return (
-        <small>Salam dari Binjai</small>
+        <small>Salam dari Binjai 👌 </small>
     )
 }
 
@@ -50,6 +53,7 @@ function UserCard(props) {
             <h3>Nama: {props.nama}</h3>
             <p>NIM: {props.nim}</p>
             <p>Tanggal: {props.tanggal}</p>
+             <p>Usia: {props.usia}</p>
         </div>
     )
 }
