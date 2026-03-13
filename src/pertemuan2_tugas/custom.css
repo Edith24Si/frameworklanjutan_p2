@@ -1,0 +1,115 @@
+/* =========================================
+   TAMPILAN HEBOH: Neon Cyber-Pink x One UI
+   ========================================= */
+
+/* Animasi Background Berjalan */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animasi Neon Berdenyut pada Card */
+@keyframes neonPulse {
+    0% { box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(255, 126, 179, 0.2), inset 0 0 10px rgba(255, 126, 179, 0.1); }
+    100% { box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 50px rgba(255, 126, 179, 0.6), inset 0 0 20px rgba(255, 126, 179, 0.3); }
+}
+
+/* Animasi Teks Mengkilap */
+@keyframes textShine {
+    to { background-position: 200% center; }
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    /* Background gradien gelap yang bergerak perlahan */
+    background: linear-gradient(-45deg, #0a0a0c, #1a0813, #2a081a, #0d0d12);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    perspective: 1000px; /* Penting untuk efek 3D nantinya */
+}
+
+/* Container utama - Super Glassmorphism & Neon */
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(20, 20, 25, 0.45);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    padding: 45px 35px;
+    border-radius: 36px;
+    
+    /* Garis tepi bercahaya tipis */
+    border: 1px solid rgba(255, 126, 179, 0.4);
+    
+    /* Animasi denyut neon dipanggil di sini */
+    animation: neonPulse 2s infinite alternate;
+    
+    /* Transisi super mulus untuk efek 3D */
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efek "Super Wah" saat kursor diarahkan: 3D Tilt & Glow Maksimal */
+.card:hover {
+    /* Kotak akan sedikit miring secara 3D dan membesar */
+    transform: rotateX(4deg) rotateY(-4deg) scale(1.05) translateY(-10px);
+    border: 1px solid rgba(255, 126, 179, 0.8);
+}
+
+/* Header - Teks Bersinar Berjalan */
+h1 {
+    margin: 0 0 16px 0;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    
+    /* Teks gradien dengan animasi kilap metalik */
+    background: linear-gradient(to right, #FF7EB3, #FF5285, #fff, #FF7EB3);
+    background-size: 200% auto;
+    color: #FF7EB3;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 3s linear infinite;
+    text-align: left;
+}
+
+/* Paragraf */
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #b0b0bc;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* Garis pemisah bergaya Laser Beam */
+hr {
+    border: none;
+    height: 2px;
+    /* Laser line memudar di kanan */
+    background: linear-gradient(90deg, #FF5285, rgba(255,126,179,0.1), transparent);
+    margin: 0 0 24px 0;
+    box-shadow: 0 0 10px #FF5285, 0 0 20px #FF7EB3; /* Cahaya laser */
+}
+
+/* Greeting / Badge berkedip pelan */
+small {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    color: #1a0813;
+    background: linear-gradient(45deg, #FF7EB3, #FF5285);
+    padding: 8px 16px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(255, 126, 179, 0.4);
+}
