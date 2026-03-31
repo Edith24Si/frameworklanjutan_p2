@@ -113,3 +113,21 @@ small {
     text-transform: uppercase;
     box-shadow: 0 4px 15px rgba(255, 126, 179, 0.4);
 }
+
+/* =========================================
+   STYLING UNTUK FOTO PROFIL (NEON)
+   ========================================= */
+.profile-pic-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Membuat foto jadi bulat */
+    border: 3px solid #FF7EB3; /* Bingkai pink neon */
+    box-shadow: 0 0 15px rgba(255, 126, 179, 0.6); /* Efek cahaya neon di foto */
+}

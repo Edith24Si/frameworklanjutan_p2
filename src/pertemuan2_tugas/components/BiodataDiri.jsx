@@ -17,8 +17,8 @@ const ProfilePicture = () => {
   return (
     <div className="profile-pic-container">
       {/* Kamu bisa ganti src gambar ini nanti dengan fotomu sendiri */}
-      <img 
-        src="https://via.placeholder.com/150" 
+      <img
+        src="/img/foto1.jpg"
         alt="Foto Profil Edith" 
         className="profile-pic"
       />
@@ -28,13 +28,13 @@ const ProfilePicture = () => {
 
 // Child 3: NamaLengkap
 const NamaLengkap = ({ nama }) => {
-  return <h2 className="nama-lengkap">{nama}</h2>;
+  return <h2 class="nama-lengkap">{nama}</h2>;
 };
 
 // Child 4: InfoDetail (NIM, Tanggal Lahir, Alamat)
-const InfoDetail = ( {nim, tanggalLahir, alamat , kampus, Prodi}) => {
+const InfoDetail = ( nim, tanggalLahir, alamat , kampus, Prodi) => {
   return (
-    <div className="info-detail">
+    <div class="info-detail">
       <p><strong>NIM:</strong> {nim}</p>
       <p><strong>Tanggal Lahir:</strong> {tanggalLahir}</p>
       <p><strong>Alamat:</strong> {alamat}</p>
