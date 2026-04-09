@@ -46,9 +46,9 @@ function ResponsiveLayout(){
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
                 <div class="bg-blue-500 p-4">Box 1</div>
-                <div class="bg-blue-500 p-4">Box 2</div>
-                <div class="bg-blue-500 p-4">Box 3</div>
-                <div class="bg-blue-500 p-4">Box 4</div>
+                <div class="bg-red-500 p-4">Box 2</div>
+                <div class="bg-green-500 p-4">Box 3</div>
+                <div class="bg-yellow-500 p-4">Box 4</div>
             </div>
         </div>
     )
