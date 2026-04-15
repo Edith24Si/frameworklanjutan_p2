@@ -7,7 +7,7 @@ createRoot(document.getElementById("root"))
     .render(
         <div>
             <Container>
-                <HelloWorld/>
+                {/* <HelloWorld/> */}
             </Container>
         </div>
     )

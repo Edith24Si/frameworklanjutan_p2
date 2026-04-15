@@ -1,0 +1,284 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "nama": "Web Development Bootcamp",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Andi Saputra",
+        "role": "Senior Frontend Developer",
+        "spesialis": "React & Node.js"
+      },
+      "durasi": { "total_jam": 40, "level": "Beginner" },
+      "harga": 500000,
+      "rating": 4.8,
+      "gambar": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600"
+    },
+    {
+      "id": 2,
+      "nama": "UI/UX Design Mastery",
+      "kategori": "Design",
+      "mentor": {
+        "nama": "Budi Hartono",
+        "role": "Lead UI/UX Designer",
+        "spesialis": "Figma & User Research"
+      },
+      "durasi": { "total_jam": 30, "level": "Beginner" },
+      "harga": 300000,
+      "rating": 4.7,
+      "gambar": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=600"
+    },
+    {
+      "id": 3,
+      "nama": "Data Science Fundamental",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Citra Dewi",
+        "role": "Data Scientist",
+        "spesialis": "Python & Machine Learning"
+      },
+      "durasi": { "total_jam": 50, "level": "Beginner" },
+      "harga": 700000,
+      "rating": 4.9,
+      "gambar": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600"
+    },
+    {
+      "id": 4,
+      "nama": "Advanced Marketing Strategy",
+      "kategori": "Marketing",
+      "mentor": {
+        "nama": "Dedi Irawan",
+        "role": "Marketing Director",
+        "spesialis": "Digital Marketing & SEO"
+      },
+      "durasi": { "total_jam": 35, "level": "Intermediate" },
+      "harga": 450000,
+      "rating": 4.6,
+      "gambar": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=600"
+    },
+    {
+      "id": 5,
+      "nama": "Fullstack Laravel & Vue",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Eko Kurniawan",
+        "role": "Backend Architect",
+        "spesialis": "PHP Frameworks"
+      },
+      "durasi": { "total_jam": 60, "level": "Advanced" },
+      "harga": 850000,
+      "rating": 4.9,
+      "gambar": "https://images.unsplash.com/photo-1593642532400-2682810df593?q=80&w=600"
+    },
+    {
+      "id": 6,
+      "nama": "Logo Design for Branding",
+      "kategori": "Design",
+      "mentor": {
+        "nama": "Fania Putri",
+        "role": "Graphic Designer",
+        "spesialis": "Adobe Illustrator"
+      },
+      "durasi": { "total_jam": 20, "level": "Beginner" },
+      "harga": 250000,
+      "rating": 4.5,
+      "gambar": "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600"
+    },
+    {
+      "id": 7,
+      "nama": "Mobile App with Flutter",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Gilang Permana",
+        "role": "Mobile Developer",
+        "spesialis": "Dart & Flutter"
+      },
+      "durasi": { "total_jam": 45, "level": "Intermediate" },
+      "harga": 600000,
+      "rating": 4.8,
+      "gambar": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600"
+    },
+    {
+      "id": 8,
+      "nama": "Social Media Management",
+      "kategori": "Marketing",
+      "mentor": {
+        "nama": "Hana Sudarsono",
+        "role": "Content Strategist",
+        "spesialis": "Instagram & TikTok Ads"
+      },
+      "durasi": { "total_jam": 15, "level": "Beginner" },
+      "harga": 200000,
+      "rating": 4.4,
+      "gambar": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600"
+    },
+    {
+      "id": 9,
+      "nama": "Cyber Security Essentials",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Irfan Maulana",
+        "role": "Security Engineer",
+        "spesialis": "Ethical Hacking"
+      },
+      "durasi": { "total_jam": 55, "level": "Advanced" },
+      "harga": 950000,
+      "rating": 5.0,
+      "gambar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600"
+    },
+    {
+      "id": 10,
+      "nama": "Product Photography",
+      "kategori": "Design",
+      "mentor": {
+        "nama": "Jaya Wijaya",
+        "role": "Professional Photographer",
+        "spesialis": "Lighting & Composition"
+      },
+      "durasi": { "total_jam": 25, "level": "Intermediate" },
+      "harga": 400000,
+      "rating": 4.7,
+      "gambar": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600"
+    },
+    {
+      "id": 11,
+      "nama": "Big Data with Hadoop",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Kurnia Sari",
+        "role": "Data Engineer",
+        "spesialis": "Hadoop & Spark"
+      },
+      "durasi": { "total_jam": 50, "level": "Advanced" },
+      "harga": 800000,
+      "rating": 4.8,
+      "gambar": "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=600"
+    },
+    {
+      "id": 12,
+      "nama": "Copywriting for Business",
+      "kategori": "Marketing",
+      "mentor": {
+        "nama": "Lestari Wahyu",
+        "role": "Senior Copywriter",
+        "spesialis": "Sales Page & Ads"
+      },
+      "durasi": { "total_jam": 12, "level": "Beginner" },
+      "harga": 180000,
+      "rating": 4.5,
+      "gambar": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600"
+    },
+    {
+      "id": 13,
+      "nama": "Game Dev with Unity",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Miko Ardi",
+        "role": "Game Developer",
+        "spesialis": "C# & 3D Assets"
+      },
+      "durasi": { "total_jam": 70, "level": "Intermediate" },
+      "harga": 750000,
+      "rating": 4.9,
+      "gambar": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=600"
+    },
+    {
+      "id": 14,
+      "nama": "Financial Management",
+      "kategori": "Business",
+      "mentor": {
+        "nama": "Nanda Pratama",
+        "role": "Financial Analyst",
+        "spesialis": "Investment & Tax"
+      },
+      "durasi": { "total_jam": 20, "level": "Intermediate" },
+      "harga": 350000,
+      "rating": 4.6,
+      "gambar": "https://images.unsplash.com/photo-1454165833767-02654a5950d7?q=80&w=600"
+    },
+    {
+      "id": 15,
+      "nama": "Search Engine Marketing",
+      "kategori": "Marketing",
+      "mentor": {
+        "nama": "Oki Setiawan",
+        "role": "SEM Specialist",
+        "spesialis": "Google Ads"
+      },
+      "durasi": { "total_jam": 18, "level": "Intermediate" },
+      "harga": 420000,
+      "rating": 4.7,
+      "gambar": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600"
+    },
+    {
+      "id": 16,
+      "nama": "Cloud Computing AWS",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Putu Gede",
+        "role": "Cloud Architect",
+        "spesialis": "Serverless & DevOps"
+      },
+      "durasi": { "total_jam": 40, "level": "Advanced" },
+      "harga": 900000,
+      "rating": 4.9,
+      "gambar": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600"
+    },
+    {
+      "id": 17,
+      "nama": "Interior Design Basics",
+      "kategori": "Design",
+      "mentor": {
+        "nama": "Qonita Syam",
+        "role": "Interior Designer",
+        "spesialis": "Space Planning"
+      },
+      "durasi": { "total_jam": 22, "level": "Beginner" },
+      "harga": 280000,
+      "rating": 4.6,
+      "gambar": "https://images.unsplash.com/photo-1616489953149-864c391500a8?q=80&w=600"
+    },
+    {
+      "id": 18,
+      "nama": "Public Speaking Pro",
+      "kategori": "Business",
+      "mentor": {
+        "nama": "Randi Karu",
+        "role": "Communication Coach",
+        "spesialis": "Leadership & Pitching"
+      },
+      "durasi": { "total_jam": 10, "level": "Beginner" },
+      "harga": 500000,
+      "rating": 4.8,
+      "gambar": "https://images.unsplash.com/photo-1475721027785-f74dea327912?q=80&w=600"
+    },
+    {
+      "id": 19,
+      "nama": "Python for Automation",
+      "kategori": "Programming",
+      "mentor": {
+        "nama": "Siska Amalia",
+        "role": "Software Engineer",
+        "spesialis": "Scripting & Bot"
+      },
+      "durasi": { "total_jam": 28, "level": "Intermediate" },
+      "harga": 320000,
+      "rating": 4.7,
+      "gambar": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600"
+    },
+    {
+      "id": 20,
+      "nama": "Motion Graphics Mastery",
+      "kategori": "Design",
+      "mentor": {
+        "nama": "Tedi Rahman",
+        "role": "Motion Designer",
+        "spesialis": "After Effects"
+      },
+      "durasi": { "total_jam": 35, "level": "Intermediate" },
+      "harga": 450000,
+      "rating": 4.8,
+      "gambar": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import BiodataDiri from './pertemuan2_tugas/components/BiodataDiri';
 function App() {
   return (
     <>
-      <BiodataDiri />
+      {/* <BiodataDiri /> */}
     </>
   );
 }
