@@ -11,7 +11,7 @@ const errorImages = {
 export default function NotFound({
     errorCode = "404",
     errorTitle = "Halaman Tidak Ditemukan",
-    errorDescription = "Halaman yang kamu cari tidak tersedia atau sudah dipindahkan."
+    errorDescription = "Halaman yang kamu cari tidak tersedia."
 }) {
     const navigate = useNavigate();
     const image = errorImages[errorCode] || errorImages["404"];
@@ -20,23 +20,15 @@ export default function NotFound({
         <div className="flex flex-col items-center justify-center min-h-[80vh] p-6 text-center">
             <img src={image} alt={`Error ${errorCode}`}
                 className="w-64 h-auto object-contain rounded-2xl mb-6" />
-
-            <h1 className="text-7xl font-black mb-3" style={{ color: "#f97316" }}>
-                {errorCode}
-            </h1>
-
+            <h1 className="text-7xl font-black mb-3" style={{ color:"#f97316" }}>{errorCode}</h1>
             <div className="flex items-center gap-2 mb-2">
-                <LuWrench size={18} style={{ color: "#f97316" }} />
+                <LuWrench size={18} style={{ color:"#f97316" }} />
                 <p className="text-xl font-bold text-white">{errorTitle}</p>
             </div>
-
-            <p className="text-sm mb-8 max-w-md" style={{ color: "#6b7280" }}>
-                {errorDescription}
-            </p>
-
+            <p className="text-sm mb-8 max-w-md" style={{ color:"#6b7280" }}>{errorDescription}</p>
             <button onClick={() => navigate("/")}
-                className="px-8 py-3 rounded-2xl font-bold text-white shadow-lg transition-all hover:opacity-90"
-                style={{ background: "linear-gradient(135deg, #f97316, #ea580c)" }}>
+                className="px-8 py-3 rounded-2xl font-bold text-white shadow-lg hover:opacity-90 transition-all"
+                style={{ background:"linear-gradient(135deg, #f97316, #ea580c)" }}>
                 Kembali ke Dashboard
             </button>
         </div>
