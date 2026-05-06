@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-
 const pageMeta = {
     "/":          { title: "Dashboard",        breadcrumb: ["Dashboard"] },
     "/pelanggan": { title: "Data Pelanggan",   breadcrumb: ["Pelanggan"] },
@@ -14,11 +13,9 @@ const pageMeta = {
     "/error/401": { title: "Error 401",        breadcrumb: ["Error", "401"] },
     "/error/403": { title: "Error 403",        breadcrumb: ["Error", "403"] },
 };
-
 export default function MainLayout() {
     const location = useLocation();
     const meta = pageMeta[location.pathname] || { title: "RevDrive CRM", breadcrumb: [] };
-
     return (
         <div className="min-h-screen flex" style={{ background: "#13161f" }}>
             <div className="flex flex-row flex-1">

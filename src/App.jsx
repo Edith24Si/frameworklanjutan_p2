@@ -3,7 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import "./assets/tailwind.css";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
-import Loading    from "./components/Loading";
+// import Loading    from "./components/Loading";
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Pelanggan  = React.lazy(() => import("./pages/Pelanggan"));
