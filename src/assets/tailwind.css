@@ -16,10 +16,10 @@
 
     /* Custom Colors RevDrive */
     --color-latar: #13161f;
-    --color-sidebar: #0f1117;
+    --color-sidebar: #3f528d;
     --color-card: #1a1d27;
     --color-orange: #f97316;
-    --color-orange-gelap: #ea580c;
+    --color-orange-g: #ea580c;
     --color-teks: #e5e7eb;
     --color-teks-redup: #9ca3af;
     --color-garis: #ffffff0d;
@@ -27,7 +27,7 @@
 
 body {
     @apply font-barlow;
-    background-color: #13161f;
+    background-color: #171d30;
     color: #e5e7eb;
     margin: 0;
 }
