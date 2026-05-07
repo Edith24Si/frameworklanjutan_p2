@@ -112,7 +112,7 @@ export default function Dashboard() {
               />
 
               <Line 
-                type="linear" // SANGAT PENTING: Membuat grafik patah/runcing
+                type="linear" 
                 dataKey="sales" 
                 stroke="#4880FF" 
                 strokeWidth={2.5} 
