@@ -3,7 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import "./assets/tailwind.css";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
-// import Loading    from "./components/Loading";
+import Loading    from "./components/Loading";
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Pelanggan  = React.lazy(() => import("./pages/Pelanggan"));
@@ -16,6 +16,7 @@ const NotFound   = React.lazy(() => import("./pages/NotFound"));
 const Login      = React.lazy(() => import("./pages/auth/Login"));
 const Register   = React.lazy(() => import("./pages/auth/Register"));
 const Forgot     = React.lazy(() => import("./pages/auth/Forgot"));
+
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                     <Route path="/error/401" element={<NotFound errorCode="401" errorTitle="Unauthorized" errorDescription="Kamu harus login terlebih dahulu." />} />
                     <Route path="/error/403" element={<NotFound errorCode="403" errorTitle="Forbidden"    errorDescription="Kamu tidak punya izin mengakses halaman ini." />} />
                     <Route path="*"          element={<NotFound />} />
+               
                 </Route>
 
             </Routes>
