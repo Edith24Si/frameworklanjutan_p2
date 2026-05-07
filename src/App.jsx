@@ -43,6 +43,7 @@ function App() {
                     <Route path="/error/401" element={<NotFound errorCode="401" errorTitle="Unauthorized" errorDescription="Kamu harus login terlebih dahulu." />} />
                     <Route path="/error/403" element={<NotFound errorCode="403" errorTitle="Forbidden"    errorDescription="Kamu tidak punya izin mengakses halaman ini." />} />
                     <Route path="*"          element={<NotFound />} />
+                 
                
                 </Route>
 

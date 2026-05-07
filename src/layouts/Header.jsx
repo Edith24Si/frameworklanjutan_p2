@@ -41,7 +41,7 @@ export default function Header() {
                 <div className="flex items-center space-x-3 border-l pl-4"
                     style={{ borderColor: "#ffffff0d" }}>
                     <span className="text-sm" style={{ color: "#9ca3af" }}>
-                        Hello, <b className="text-white">Admin CRM</b>
+                        Hello, <b className="text-white">Admin RevDrive</b>
                     </span>
                     <img
                         src="https://avatar.iran.liara.run/public/28"
