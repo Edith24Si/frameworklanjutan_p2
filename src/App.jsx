@@ -4,6 +4,8 @@ import "./assets/tailwind.css";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import Loading    from "./components/Loading";
+import Pelanggan from './pages/Pelanggan';
+import PelangganDetail from './pages/PelangganDetail';
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Pelanggan  = React.lazy(() => import("./pages/Pelanggan"));
