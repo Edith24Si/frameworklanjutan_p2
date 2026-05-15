@@ -75,16 +75,6 @@ export default function Pelanggan() {
                             {["No", "ID", "Nama", "Email", "No HP", "Loyalty", "Aksi"].map(h => (
                                 <th key={h} className="..." style={{ color: "#4b5563" }}>{h}</th>
                             ))}
-
-                            {/* Di bagian TBODY, tambahkan kolom tombol Link */}
-                            <td className="px-4 py-3">
-                                <Link
-                                    to={`/pelanggan/${d.id}`}
-                                    className="text-[10px] bg-white/5 hover:bg-white/10 text-white px-3 py-1.5 rounded-lg transition-all border border-white/10"
-                                >
-                                    Detail
-                                </Link>
-                            </td>
                         </thead>
                         <tbody className="divide-y divide-white/5">
                             {data.map((d, i) => (
@@ -102,6 +92,14 @@ export default function Pelanggan() {
                                             }}>
                                             {d.loyalty}
                                         </span>
+                                    </td>
+                                    <td className="px-4 py-3">
+                                        <Link
+                                            to={`/pelanggan/${d.id}`}
+                                            className="text-[10px] bg-white/5 hover:bg-white/10 text-white px-3 py-1.5 rounded-lg transition-all border border-white/10"
+                                        >
+                                            Detail
+                                        </Link>
                                     </td>
                                 </tr>
                             ))}
