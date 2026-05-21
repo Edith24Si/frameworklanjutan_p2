@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import {
     LuLayoutDashboard, LuUsers, LuCar, LuCalendarCheck,
     LuPackage, LuStar, LuMessageSquare, LuPlus, LuWrench,
-    LuTriangleAlert, LuLock, LuUserX
+    LuTriangleAlert, LuLock, LuUserX,LuComponent
 } from "react-icons/lu";
 
 export default function Sidebar() {
@@ -14,6 +14,7 @@ export default function Sidebar() {
         { id: "inventory", icon: LuPackage,         label: "Inventory",  to: "/inventory" },
         { id: "loyalty",   icon: LuStar,            label: "Loyalty",    to: "/loyalty" },
         { id: "feedback",  icon: LuMessageSquare,   label: "Feedback",   to: "/feedback" },
+        { id: "components", icon: LuComponent,      label: "Components", to: "/components" }
     ];
 
     const errorMenus = [

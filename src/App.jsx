@@ -17,6 +17,7 @@ const Login      = React.lazy(() => import("./pages/auth/Login"));
 const Register   = React.lazy(() => import("./pages/auth/Register"));
 const Forgot     = React.lazy(() => import("./pages/auth/Forgot"));
 const PelangganDetail = React.lazy(() => import("./pages/PelangganDetail"));
+const Components = React.lazy(() => import("./pages/Component"));
 
 function App() {
     return (
@@ -44,7 +45,7 @@ function App() {
                     <Route path="/error/403" element={<NotFound errorCode="403" errorTitle="Forbidden"    errorDescription="Kamu tidak punya izin mengakses halaman ini." />} />
                     <Route path="*"          element={<NotFound />} />
                     <Route path="/pelanggan/:id" element={<PelangganDetail />} />
-
+                    <Route path="/components" element={<Components />} />
                
                 </Route>
 
