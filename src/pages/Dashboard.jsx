@@ -1,6 +1,11 @@
-import { LuUsers, LuCar, LuCalendarCheck, LuDollarSign, LuWrench } from "react-icons/lu";
+import { LuUsers, LuCar, LuCalendarCheck, LuDollarSign, LuWrench, LuSearch } from "react-icons/lu";
 import PageHeader from "../components/PageHeader";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Area } from 'recharts';
+
+// IMPORT 3 KOMPONEN SHADCN UI BARU (BUKAN BUTTON, CARD, BADGE)
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 
 // Data dibuat lebih rapat untuk meniru kepadatan grafik di Figma
 const salesData = [
@@ -38,11 +43,22 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="pb-10 bg-[#09090b] min-h-screen">
+    <div className="pb-10 bg-[#09090b] min-h-screen space-y-6">
       <PageHeader title="Dashboard" breadcrumb={["Dashboard"]} />
 
+      {/* SHADCN COMPONENT 1: Alert Status Sistem */}
+      <div className="mx-5">
+        <Alert className="border-orange-500/20 bg-[#1a1d27] text-gray-200">
+          <LuWrench className="h-4 w-4 text-orange-500" />
+          <AlertTitle className="font-bold text-white text-sm">Sistem RevDrive CRM Aktif</AlertTitle>
+          <AlertDescription className="text-xs text-[#9ca3af]">
+            Semua data bengkel, manajemen pelanggan, dan riwayat kendaraan telah tersinkronisasi.
+          </AlertDescription>
+        </Alert>
+      </div>
+
       {/* Stats Grid */}
-      <div className="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card) => (
           <div key={card.id} className="flex items-center space-x-4 rounded-2xl p-6 border bg-[#1a1d27] border-[#ffffff0d]">
             <div className="rounded-xl p-3" style={{ background: `${card.color}22` }}>
@@ -122,6 +138,38 @@ export default function Dashboard() {
               />
             </LineChart>
           </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* SHADCN COMPONENT 2: Separator Garis Pembatas */}
+      <div className="mx-5 py-2">
+        <Separator className="bg-white/10" />
+      </div>
+
+      {/* Panel Fitur Pencarian & Quick View */}
+      <div className="mx-5">
+        <div className="rounded-2xl p-6 border bg-[#1a1d27] border-[#ffffff0d] shadow-2xl">
+          <div className="flex items-center gap-2 mb-4">
+            <LuSearch size={18} className="text-orange-500" />
+            <h3 className="text-base font-bold text-white">Quick Search Data</h3>
+          </div>
+          
+          <p className="text-xs text-[#9ca3af] mb-3">
+            Cari berkas mekanik, data pelanggan, atau nomor polisi kendaraan secara langsung di sini.
+          </p>
+
+          {/* SHADCN COMPONENT 3: Input Search Box */}
+          <div className="flex max-w-md gap-2">
+            <Input
+              type="text"
+              placeholder="Masukkan plat nomor (e.g. BM 1234 XX) atau nama..."
+              className="bg-[#09090b] border-white/10 text-white placeholder:text-gray-500 text-xs focus-visible:ring-orange-500"
+            />
+            <button 
+              className="px-4 py-2 text-xs font-semibold text-white rounded-md bg-orange-600 hover:bg-orange-700 transition-colors">
+              Cari
+            </button>
+          </div>
         </div>
       </div>
     </div>
