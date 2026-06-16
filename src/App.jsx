@@ -18,6 +18,7 @@ const Register   = React.lazy(() => import("./pages/auth/Register"));
 const Forgot     = React.lazy(() => import("./pages/auth/Forgot"));
 const PelangganDetail = React.lazy(() => import("./pages/PelangganDetail"));
 const Components = React.lazy(() => import("./pages/Component"));
+const HookDemo = React.lazy(() => import("./pertemuan-12/HookDemo"));
 
 function App() {
     return (
@@ -46,6 +47,7 @@ function App() {
                     <Route path="*"          element={<NotFound />} />
                     <Route path="/pelanggan/:id" element={<PelangganDetail />} />
                     <Route path="/components" element={<Components />} />
+                    <Route path="/pertemuan-12" element={<HookDemo />} />
                
                 </Route>
 

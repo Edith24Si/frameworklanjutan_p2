@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#1b2b17"/>
+  <rect x="40" y="40" width="1120" height="720" rx="12" fill="#152614" stroke="#37582a"/>
+  <text x="80" y="140" fill="#ecf9e6" font-size="48" font-family="Arial">Placeholder - useRef</text>
+  <text x="80" y="200" fill="#bfe3b0" font-size="28" font-family="Arial">Contoh: Fokus input pencarian pelanggan dan menyimpan nilai sebelumnya</text>
+  <g transform="translate(80,260)">
+    <rect x="0" y="0" width="420" height="48" rx="6" fill="#12220f" stroke="#37582a"/>
+    <text x="16" y="32" fill="#d4efc9" font-size="20">Ref: inputSearchRef.current.focus()</text>
+  </g>
+  <text x="80" y="360" fill="#bfe3b0" font-size="20">Export PNG dari Excalidraw untuk pengumpulan akhir.</text>
+</svg>

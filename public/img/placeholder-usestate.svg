@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  <rect x="40" y="40" width="1120" height="720" rx="12" fill="#111827" stroke="#374151"/>
+  <text x="80" y="140" fill="#f8fafc" font-size="48" font-family="Arial">Placeholder - useState</text>
+  <text x="80" y="200" fill="#9ca3af" font-size="28" font-family="Arial">Contoh: Form Pelanggan (state: nama, email, telepon)</text>
+  <g transform="translate(80,260)">
+    <rect x="0" y="0" width="480" height="48" rx="6" fill="#111827" stroke="#374151"/>
+    <text x="16" y="32" fill="#cbd5e1" font-size="20">Input: Nama Pelanggan</text>
+  </g>
+  <text x="80" y="360" fill="#9ca3af" font-size="20">Export PNG dari Excalidraw untuk pengumpulan akhir.</text>
+</svg>

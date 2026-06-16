@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#02111b"/>
+  <rect x="40" y="40" width="1120" height="720" rx="12" fill="#042639" stroke="#0b556b"/>
+  <text x="80" y="140" fill="#e6f6ff" font-size="48" font-family="Arial">Placeholder - useEffect</text>
+  <text x="80" y="200" fill="#99cfe6" font-size="28" font-family="Arial">Contoh: Fetch daftar pelanggan saat halaman dimuat atau filter berubah</text>
+  <g transform="translate(80,260)">
+    <rect x="0" y="0" width="640" height="40" rx="6" fill="#083047" stroke="#0b556b"/>
+    <text x="16" y="26" fill="#cbeefb" font-size="18">Simulasi: fetch('/api/pelanggan') → setData()</text>
+  </g>
+  <text x="80" y="360" fill="#99cfe6" font-size="20">Export PNG dari Excalidraw untuk pengumpulan akhir.</text>
+</svg>
