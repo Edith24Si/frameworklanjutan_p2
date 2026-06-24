@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 function UseStateDemo() {
   const [nama, setNama] = useState("");
   const [count, setCount] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   return (
     <section className="p-4 border rounded mb-4 bg-white/5">
@@ -58,6 +59,7 @@ function UseRefDemo() {
   const inputRef = useRef(null);
   const prevRef = useRef("");
   const [value, setValue] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     prevRef.current = value;

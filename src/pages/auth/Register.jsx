@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LuUser, LuLock, LuUserPlus, LuCircleAlert } from "react-icons/lu";
+import { usersAPI } from "../../services/usersAPI";
 
 export default function Register() {
     const navigate = useNavigate();
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         username: "",
         password: "",
@@ -16,7 +18,7 @@ export default function Register() {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
 
@@ -35,14 +37,26 @@ export default function Register() {
             return;
         }
 
-        // Simpan ke localStorage
-        localStorage.setItem("reg_username", form.username);
-        localStorage.setItem("reg_password", form.password);
+        try {
+            setLoading(true);
 
-        setSuccess(true);
-        setTimeout(() => {
-            navigate("/login");
-        }, 2000);
+            // Simpan ke Supabase
+            await usersAPI.registerUser({
+                username: form.username,
+                password: form.password,
+            });
+
+            setSuccess(true);
+            setTimeout(() => {
+                navigate("/login");
+            }, 2000);
+        } catch (err) {
+            setError(
+                err.response?.data?.message || "Gagal mendaftar, coba lagi."
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
     const inputClass = "w-full pl-10 pr-4 py-2.5 rounded-xl text-sm border border-white/5 outline-none focus:border-orange-500/50 text-gray-200 placeholder-gray-600 transition-colors";
@@ -59,7 +73,7 @@ export default function Register() {
             {error && (
                 <div className="flex items-center gap-2 rounded-xl px-4 py-3 mb-4 text-sm text-red-400 border border-red-500/20"
                     style={{ background: "rgba(239,68,68,0.05)" }}>
-                   <LuCircleAlert size={15} /> {error}
+                    <LuCircleAlert size={15} /> {error}
                 </div>
             )}
 
@@ -127,9 +141,10 @@ export default function Register() {
                 </div>
 
                 <button type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-bold text-sm text-white"
+                    disabled={loading}
+                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-bold text-sm text-white disabled:opacity-50"
                     style={{ background: "linear-gradient(135deg, #f97316, #ea580c)" }}>
-                    <LuUserPlus size={15} /> Daftar
+                    <LuUserPlus size={15} /> {loading ? "Mendaftarkan..." : "Daftar"}
                 </button>
 
                 <p className="text-center text-xs" style={{ color: "#4b5563" }}>

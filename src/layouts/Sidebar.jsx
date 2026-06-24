@@ -2,25 +2,26 @@ import { NavLink } from "react-router-dom";
 import {
     LuLayoutDashboard, LuUsers, LuCar, LuCalendarCheck,
     LuPackage, LuStar, LuMessageSquare, LuPlus, LuWrench,
-    LuTriangleAlert, LuLock, LuUserX,LuComponent
+    LuTriangleAlert, LuLock, LuUserX, LuComponent, LuUserCog
 } from "react-icons/lu";
 
 export default function Sidebar() {
     const menuItems = [
-        { id: "dashboard", icon: LuLayoutDashboard, label: "Dashboard",  to: "/" },
-        { id: "pelanggan", icon: LuUsers,           label: "Pelanggan",  to: "/pelanggan" },
-        { id: "kendaraan", icon: LuCar,             label: "Kendaraan",  to: "/kendaraan" },
-        { id: "booking",   icon: LuCalendarCheck,   label: "Booking",    to: "/booking" },
-        { id: "inventory", icon: LuPackage,         label: "Inventory",  to: "/inventory" },
-        { id: "loyalty",   icon: LuStar,            label: "Loyalty",    to: "/loyalty" },
-        { id: "feedback",  icon: LuMessageSquare,   label: "Feedback",   to: "/feedback" },
-        { id: "components", icon: LuComponent,      label: "Components", to: "/components" }
+        { id: "dashboard", icon: LuLayoutDashboard, label: "Dashboard", to: "/" },
+        { id: "pelanggan", icon: LuUsers, label: "Pelanggan", to: "/pelanggan" },
+        { id: "kendaraan", icon: LuCar, label: "Kendaraan", to: "/kendaraan" },
+        { id: "booking", icon: LuCalendarCheck, label: "Booking", to: "/booking" },
+        { id: "inventory", icon: LuPackage, label: "Inventory", to: "/inventory" },
+        { id: "loyalty", icon: LuStar, label: "Loyalty", to: "/loyalty" },
+        { id: "feedback", icon: LuMessageSquare, label: "Feedback", to: "/feedback" },
+        { id: "users", icon: LuUserCog, label: "Kelola User", to: "/users" },
+        { id: "components", icon: LuComponent, label: "Components", to: "/components" }
     ];
 
     const errorMenus = [
         { id: "error400", icon: LuTriangleAlert, label: "Error 400", to: "/error/400" },
-        { id: "error401", icon: LuUserX,         label: "Error 401", to: "/error/401" },
-        { id: "error403", icon: LuLock,          label: "Error 403", to: "/error/403" },
+        { id: "error401", icon: LuUserX, label: "Error 401", to: "/error/401" },
+        { id: "error403", icon: LuLock, label: "Error 403", to: "/error/403" },
         { id: "error404", icon: LuTriangleAlert, label: "Error 404", to: "/halaman-ngasal" },
     ];
 

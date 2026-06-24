@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LuUser, LuLock, LuLogIn, LuCircleAlert } from "react-icons/lu";
 import { ImSpinner2 } from "react-icons/im";
-import axios from "axios";
+import { usersAPI } from "../../services/usersAPI";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -24,44 +24,27 @@ export default function Login() {
             return;
         }
 
-        // Cek dulu dari localStorage (akun Register lokal)
-        const regUsername = localStorage.getItem("reg_username");
-        const regPassword = localStorage.getItem("reg_password");
+        try {
+            setLoading(true);
 
-        if (
-            dataForm.email === regUsername &&
-            dataForm.password === regPassword
-        ) {
-            // Login pakai akun lokal berhasil
+            const result = await usersAPI.loginUser(
+                dataForm.email,
+                dataForm.password
+            );
+
+            if (result.length === 0) {
+                setError("Username atau password salah!");
+                return;
+            }
+
             navigate("/");
-            return;
+        } catch (err) {
+            setError(
+                err.response?.data?.message || "Terjadi kesalahan, coba lagi."
+            );
+        } finally {
+            setLoading(false);
         }
-
-        // Kalau bukan akun lokal → coba login ke API
-        setLoading(true);
-
-        axios
-            .post("https://dummyjson.com/user/login", {
-                username: dataForm.email,
-                password: dataForm.password,
-            })
-            .then((response) => {
-                if (response.status !== 200) {
-                    setError(response.data.message);
-                    return;
-                }
-                navigate("/");
-            })
-            .catch((err) => {
-                if (err.response) {
-                    setError(err.response.data.message || "Username atau password salah!");
-                } else {
-                    setError(err.message || "Terjadi kesalahan, coba lagi.");
-                }
-            })
-            .finally(() => {
-                setLoading(false);
-            });
     };
 
     const inputClass = "w-full pl-10 pr-4 py-2.5 rounded-xl text-sm border border-white/5 outline-none focus:border-orange-500/50 text-gray-200 placeholder-gray-600 transition-colors";
@@ -117,12 +100,9 @@ export default function Login() {
                     </div>
                 </div>
 
-                <p className="text-[11px]" style={{ color: "#4b5563" }}>
-                    Demo API: <span className="font-mono" style={{ color: "#f97316" }}>emilys</span> / <span className="font-mono" style={{ color: "#f97316" }}>emilyspass</span>
-                </p>
-
                 <button type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-bold text-sm text-white transition-all"
+                    disabled={loading}
+                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-bold text-sm text-white transition-all disabled:opacity-50"
                     style={{ background: "linear-gradient(135deg, #f97316, #ea580c)" }}>
                     <LuLogIn size={15} /> Masuk
                 </button>
