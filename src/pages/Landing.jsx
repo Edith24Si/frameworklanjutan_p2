@@ -99,6 +99,50 @@ export default function Landing() {
                 </div>
             </section>
 
+            {/* HOW IT WORKS SECTION */}
+            <section className="px-8 py-16 max-w-5xl mx-auto">
+                <h2 className="text-3xl font-bold text-white text-center mb-3">Cara Kerja</h2>
+                <p className="text-center mb-12" style={{ color: "#9ca3af" }}>
+                    Mulai gunakan RevDrive dalam 3 langkah mudah
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {[
+                        { step: "01", title: "Daftar Akun", desc: "Buat akun bengkel kamu dalam hitungan menit. Tidak perlu kartu kredit." },
+                        { step: "02", title: "Setup Bengkel", desc: "Masukkan data bengkel, tambahkan mekanik, dan atur jadwal operasional." },
+                        { step: "03", title: "Mulai Kelola", desc: "Terima booking, kelola pelanggan, dan pantau inventory dari satu dashboard." },
+                    ].map((item, i) => (
+                        <div key={i} className="flex flex-col items-center text-center">
+                            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 font-black text-2xl"
+                                style={{ background: "linear-gradient(135deg, #f97316, #ea580c)", color: "#fff" }}>
+                                {item.step}
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                            <p className="text-sm leading-relaxed" style={{ color: "#9ca3af" }}>{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* STATS SECTION */}
+            <section className="px-8 py-16 mx-8 rounded-3xl mb-16"
+                style={{ background: "linear-gradient(135deg, #f97316, #ea580c)" }}>
+                <h2 className="text-3xl font-bold text-white text-center mb-12">
+                    Dipercaya oleh Bengkel di Seluruh Indonesia
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    {[
+                        { value: "500+", label: "Bengkel Aktif" },
+                        { value: "12.000+", label: "Pelanggan Terdaftar" },
+                        { value: "98%", label: "Tingkat Kepuasan" },
+                    ].map((stat, i) => (
+                        <div key={i} className="text-center">
+                            <p className="text-5xl font-black text-white mb-2">{stat.value}</p>
+                            <p className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.8)" }}>{stat.label}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
         </div>
     );
 }
