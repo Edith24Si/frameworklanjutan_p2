@@ -20,6 +20,7 @@ const Forgot = React.lazy(() => import("./pages/auth/Forgot"));
 const PelangganDetail = React.lazy(() => import("./pages/PelangganDetail"));
 const Components = React.lazy(() => import("./pages/Component"));
 const HookDemo = React.lazy(() => import("./pertemuan-12/HookDemo"));
+const Landing = React.lazy(() => import("./pages/Landing"));
 
 function App() {
     return (
@@ -42,7 +43,7 @@ function App() {
                     <Route path="/inventory" element={<Inventory />} />
                     <Route path="/loyalty" element={<Loyalty />} />
                     <Route path="/feedback" element={<Feedback />} />
-                    <Route path="/users"     element={<Users />} />
+                    <Route path="/users" element={<Users />} />
                     <Route path="/error/400" element={<NotFound errorCode="400" errorTitle="Bad Request" errorDescription="Permintaan tidak bisa diproses." />} />
                     <Route path="/error/401" element={<NotFound errorCode="401" errorTitle="Unauthorized" errorDescription="Kamu harus login terlebih dahulu." />} />
                     <Route path="/error/403" element={<NotFound errorCode="403" errorTitle="Forbidden" errorDescription="Kamu tidak punya izin mengakses halaman ini." />} />
@@ -50,6 +51,8 @@ function App() {
                     <Route path="/pelanggan/:id" element={<PelangganDetail />} />
                     <Route path="/components" element={<Components />} />
                     <Route path="/pertemuan-12" element={<HookDemo />} />
+                    {/* Landing Page — tanpa layout */}
+                    <Route path="/landing" element={<Landing />} />
 
                 </Route>
 
