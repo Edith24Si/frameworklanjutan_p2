@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LuWrench, LuUsers, LuCalendarCheck, LuPackage, LuChevronRight } from "react-icons/lu";
+import { LuWrench, LuUsers, LuCalendarCheck, LuPackage, LuChevronRight, LuChevronDown, LuStar } from "react-icons/lu";
 
 export default function Landing() {
     const navigate = useNavigate();
+    const [openFaq, setOpenFaq] = useState(null);
 
     const features = [
         {
@@ -19,6 +21,39 @@ export default function Landing() {
             icon: LuPackage,
             title: "Manajemen Inventory",
             desc: "Pantau stok suku cadang secara real-time. Dapatkan notifikasi otomatis saat stok hampir habis.",
+        },
+    ];
+
+    const testimonials = [
+        {
+            name: "Budi Hartono",
+            role: "Pemilik Bengkel Maju Jaya, Pekanbaru",
+            text: "RevDrive benar-benar mengubah cara saya mengelola bengkel. Sekarang saya bisa pantau semua dari HP tanpa harus selalu di tempat.",
+        },
+        {
+            name: "Sari Dewi",
+            role: "Manajer Operasional Auto Prima, Medan",
+            text: "Fitur booking online-nya luar biasa. Antrian lebih teratur dan pelanggan tidak perlu menunggu lama. Omzet naik 30% dalam 3 bulan.",
+        },
+        {
+            name: "Rizky Pratama",
+            role: "Pemilik bengkel RizkyMotor, Batam",
+            text: "Inventory management-nya sangat membantu. Tidak ada lagi stok suku cadang yang tiba-tiba habis saat dibutuhkan pelanggan.",
+        },
+    ];
+
+    const faqs = [
+        {
+            q: "Apakah RevDrive gratis untuk digunakan?",
+            a: "RevDrive menyediakan paket gratis untuk bengkel dengan kapasitas terbatas. Untuk fitur lengkap dan kapasitas tidak terbatas, tersedia paket premium dengan harga terjangkau.",
+        },
+        {
+            q: "Apakah data bengkel saya aman?",
+            a: "Seluruh data disimpan dengan enkripsi tingkat tinggi di server yang aman. Kami tidak pernah membagikan data pelanggan kepada pihak ketiga.",
+        },
+        {
+            q: "Bagaimana cara memulai menggunakan RevDrive?",
+            a: "Cukup daftar akun, isi profil bengkel, dan langsung mulai gunakan semua fitur. Proses setup hanya butuh waktu kurang dari 5 menit.",
         },
     ];
 
@@ -124,7 +159,7 @@ export default function Landing() {
             </section>
 
             {/* STATS SECTION */}
-            <section className="px-8 py-16 mx-8 rounded-3xl mb-16"
+            <section className="px-8 py-16 mx-8 rounded-3xl mb-8"
                 style={{ background: "linear-gradient(135deg, #f97316, #ea580c)" }}>
                 <h2 className="text-3xl font-bold text-white text-center mb-12">
                     Dipercaya oleh Bengkel di Seluruh Indonesia
@@ -142,6 +177,107 @@ export default function Landing() {
                     ))}
                 </div>
             </section>
+
+            {/* TESTIMONIAL SECTION */}
+            <section className="px-8 py-16 max-w-5xl mx-auto">
+                <h2 className="text-3xl font-bold text-white text-center mb-3">Kata Mereka</h2>
+                <p className="text-center mb-12" style={{ color: "#9ca3af" }}>
+                    Bergabung bersama ratusan bengkel yang sudah merasakan manfaatnya
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {testimonials.map((t, i) => (
+                        <div key={i} className="p-6 rounded-2xl border"
+                            style={{ background: "#1a1d27", borderColor: "#ffffff10" }}>
+                            <div className="flex gap-1 mb-4">
+                                {[...Array(5)].map((_, j) => (
+                                    <LuStar key={j} size={14} style={{ color: "#f97316" }} fill="#f97316" />
+                                ))}
+                            </div>
+                            <p className="text-sm leading-relaxed mb-4 italic" style={{ color: "#d1d5db" }}>
+                                "{t.text}"
+                            </p>
+                            <div>
+                                <p className="text-sm font-bold text-white">{t.name}</p>
+                                <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{t.role}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* FAQ SECTION */}
+            <section className="px-8 py-16 max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold text-white text-center mb-3">Pertanyaan Umum</h2>
+                <p className="text-center mb-12" style={{ color: "#9ca3af" }}>
+                    Ada pertanyaan? Kami punya jawabannya
+                </p>
+                <div className="space-y-3">
+                    {faqs.map((faq, i) => (
+                        <div key={i} className="rounded-2xl border overflow-hidden"
+                            style={{ background: "#1a1d27", borderColor: "#ffffff10" }}>
+                            <button
+                                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                className="w-full flex items-center justify-between px-6 py-4 text-left"
+                            >
+                                <span className="text-sm font-semibold text-white">{faq.q}</span>
+                                <LuChevronDown
+                                    size={16}
+                                    style={{
+                                        color: "#f97316",
+                                        transform: openFaq === i ? "rotate(180deg)" : "rotate(0deg)",
+                                        transition: "transform 0.2s"
+                                    }} />
+                            </button>
+                            {openFaq === i && (
+                                <div className="px-6 pb-5">
+                                    <p className="text-sm leading-relaxed" style={{ color: "#9ca3af" }}>{faq.a}</p>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* CTA BOTTOM SECTION */}
+            <section className="px-8 py-20 mx-8 rounded-3xl mb-16 text-center"
+                style={{ background: "#1a1d27", border: "1px solid #ffffff10" }}>
+                <h2 className="text-4xl font-black text-white mb-4">
+                    Siap Kelola Bengkel<br />
+                    <span style={{ color: "#f97316" }}>Lebih Profesional?</span>
+                </h2>
+                <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: "#9ca3af" }}>
+                    Bergabung sekarang dan rasakan kemudahan mengelola bengkel dengan teknologi digital terkini.
+                </p>
+                <button
+                    onClick={() => navigate("/register")}
+                    className="flex items-center gap-2 px-10 py-4 rounded-xl font-bold text-white mx-auto transition-all hover:scale-105"
+                    style={{ background: "linear-gradient(135deg, #f97316, #ea580c)" }}>
+                    Daftar Sekarang — Gratis <LuChevronRight size={18} />
+                </button>
+            </section>
+
+            {/* FOOTER */}
+            <footer className="px-8 py-10 border-t" style={{ borderColor: "#ffffff10" }}>
+                <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+                            style={{ background: "linear-gradient(135deg, #f97316, #ea580c)" }}>
+                            <LuWrench size={15} className="text-white" />
+                        </div>
+                        <span className="font-black text-lg text-white tracking-tight">
+                            RevDrive<span style={{ color: "#f97316" }}>.</span>
+                        </span>
+                    </div>
+                    <div className="flex gap-6 text-sm" style={{ color: "#6b7280" }}>
+                        <span className="cursor-pointer hover:text-orange-400 transition">Fitur</span>
+                        <span className="cursor-pointer hover:text-orange-400 transition">Tentang</span>
+                        <span className="cursor-pointer hover:text-orange-400 transition">Kontak</span>
+                    </div>
+                    <p className="text-xs" style={{ color: "#4b5563" }}>
+                        © 2026 RevDrive AutoSolution. All rights reserved.
+                    </p>
+                </div>
+            </footer>
 
         </div>
     );
